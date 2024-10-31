@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title> DATA I GODZINA</title>
+    <title> Klub Sportowy SPARTA LEGNICA</title>
     <meta charset="utf-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,9 +15,9 @@
         .sixtyfour-convergence {
             text-align: center;
             font-size: 30px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-
+            padding-top: 40px;
+            padding-bottom: 41px;
+            background-color: black;
         }
 
         .sixtyfour-convergence {
@@ -32,74 +32,84 @@
                 "YELA" 0;
         }
 
-
-        .container {
-            position: fixed;
-            top: 2%;
-            left: 207vh;
+        .containerLogo {
+            position: absolute;
+            top: 24px;
+            right: 30px;
         }
 
         #zegar {
-            background-color: red;
-            height: 20px;
-            width: 100px;
+            background-color: black;
+            height: 20%;
+            width: 100%;
             padding: 5px;
             color: white;
             text-align: center;
             border-radius: 5cm;
+            border: 3px solid orange;
             margin-bottom: 10px;
         }
 
         #kalendarz {
-            background-color: green;
-            height: 20px;
-            width: 100px;
+            background-color: black;
+            height: 20%;
+            width: 100%;
             padding: 5px;
             color: white;
             text-align: center;
+            border-radius: 5cm;
+            border: 3px solid orange;
             border-radius: 5cm
         }
 
         #picture {
             position: absolute;
-            top: 2%;
+            top: 14px;
             width: 10px;
             height: 10px;
+            margin-left: 9px;
         }
-      
-            
+
+        .containerMain {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 12px;
+            border: 0.5px solid black;
+        }
+
+        .styl1:hover {
+            background-color: orangered;
+            color: white;
+            padding: 1px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="sixtyfour-convergence">
-        SPARTA LEGNICA
-    </div>
+    <div class="sixtyfour-convergence"> SPARTA LEGNICA </div>
 
     <div id="picture">
         <img src="logo1.png" width="100">
     </div>
 
-    <div class="container">
+    <div class="containerLogo">
         <div id="zegar"></div>
         <div id="kalendarz"></div>
     </div>
 
-    <p>
-    <div class="table">
-        <table>
 
-            <tr>
-                <td>ddd</td>
-            </tr>
-            <tr>
-                <td>dd</td>
-            </tr>
-
-        </table>
+    <div class="containerMain">
+        <div class="styl1"> AKTUALNOŚCI </div>
+        <div class="styl1"> KOSZYKÓWKA</div>
+        <div class="styl1"> LEKKOATLETYKA</div>
+        <div class="styl1"> OBOZY </div>
+        <div class="styl1"> KONTAKT </div>
+        <div classf="styl1"> GALERIA </div>
     </div>
 
-    </p>
+
+
     <script>
 
         const pobierzCzas = () => {
@@ -138,7 +148,13 @@
 
         //const element = document.querySelector(".element");
         //element.innerText = `Dzisiaj jest dzień tygodnia: ${ days[now.getDay()] }`;
+
+
+
     </script>
+
+
+
 
 </body>
 
