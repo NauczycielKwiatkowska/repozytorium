@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> DATA I GODZINA</title>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .sixtyfour-convergence {
+            text-align: center;
+            font-size: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+        }
+
+        .sixtyfour-convergence {
+            font-family: "Sixtyfour Convergence", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+                "BLED" 0,
+                "SCAN" 0,
+                "XELA" 0,
+                "YELA" 0;
+        }
+
+
+        .container {
+            position: fixed;
+            top: 2%;
+            left: 207vh;
+        }
+
+        #zegar {
+            background-color: red;
+            height: 20px;
+            width: 100px;
+            padding: 5px;
+            color: white;
+            text-align: center;
+            border-radius: 5cm;
+            margin-bottom: 10px;
+        }
+
+        #kalendarz {
+            background-color: green;
+            height: 20px;
+            width: 100px;
+            padding: 5px;
+            color: white;
+            text-align: center;
+            border-radius: 5cm
+        }
+
+        #picture {
+            position: absolute;
+            top: 2%;
+            width: 10px;
+            height: 10px;
+        }
+      
+            
+    </style>
+</head>
+
+<body>
+    <div class="sixtyfour-convergence">
+        SPARTA LEGNICA
+    </div>
+
+    <div id="picture">
+        <img src="logo1.png" width="100">
+    </div>
+
+    <div class="container">
+        <div id="zegar"></div>
+        <div id="kalendarz"></div>
+    </div>
+
+    <p>
+    <div class="table">
+        <table>
+
+            <tr>
+                <td>ddd</td>
+            </tr>
+            <tr>
+                <td>dd</td>
+            </tr>
+
+        </table>
+    </div>
+
+    </p>
+    <script>
+
+        const pobierzCzas = () => {
+            const data = new Date();
+            let godzina = data.getHours();
+            let minuta = data.getMinutes();
+            if (minuta < 10) {
+                minuta = "0" + minuta
+            }
+            let sekunda = data.getSeconds();
+            if (sekunda < 10) {
+                sekunda = "0" + sekunda
+            }
+            zegar.innerHTML = godzina + ":" + minuta + ":" + sekunda;
+        }
+        const zegar = document.getElementById('zegar');
+        const interval = setInterval(pobierzCzas, 1000);
+        const kalendarz = document.getElementById('kalendarz');
+        const data = new Date();
+        let dzien = data.getDate();
+        if (dzien < 10) {
+            dzien = "0" + dzien
+        }
+        let miesiac = data.getMonth() + 1;
+        if (miesiac < 10) {
+            miesiac = "0" + miesiac
+        }
+        let rok = data.getFullYear();
+        kalendarz.innerHTML = dzien + "-" + miesiac + "-" + rok;
+
+
+        pobierzCzas();
+
+        //const now = new Date();
+        //const days = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"];
+
+        //const element = document.querySelector(".element");
+        //element.innerText = `Dzisiaj jest dzień tygodnia: ${ days[now.getDay()] }`;
+    </script>
+
+</body>
+
+</html>
