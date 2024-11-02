@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> NOWA strona SPARTY</title>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="css/fontello.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+
+            <div class="logo">
+                <img src="logo1.png" style="float: left" width="110px" />
+                <span style=color:orange> SPARTA </span>LEGNICA
+                <div style="clear:both;"></div>
+                <div class="containerLogo">
+                    <div id="zegar"></div>
+                    <div id="kalendarz"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="nav">
+            <ol>
+                <li><a href="#"> Koszykówka </a>
+                    <ul>
+                        <li> <a href="#"> Grupy </a></li>
+                        <li> <a href="#"> Trenerzy </a></li>
+                        <li> <a href="#"> Miejsce treningów </a></li>
+                    </ul>
+                </li>
+                <li><a href="#"> Lekkoatletyka </a>
+                    <ul>
+                        <li> <a href="#"> Grupy </a></li>
+                        <li> <a href="#"> Trenerzy </a></li>
+                        <li> <a href="#"> Miejsce treningów </a></li>
+                    </ul>
+                </li>
+                <li><a href="#"> Galeria </a>
+                    <ul>
+                        <li> <a href="#"> Treningi </a></li>
+                        <li> <a href="#"> Mecze </a></li>
+                    </ul>
+                </li>
+                <li><a href="#"> Obozy </a>
+                    <ul>
+                        <li> <a href="#"> 2024 </a></li>
+                        <li> <a href="#"> 2023 </a></li>
+                        <li> <a href="#"> 2022 </a></li>
+                    </ul>
+                </li>
+                <li><a href="kontakt.html"> Kontakt </a> </li>
+            </ol>
+        </div>
+
+
+        <div class="content">
+            <p>
+                
+             Klub Sportowy Sparta Legnica powstał w 2011 roku. <br>
+                    Tworzą go trenerzy - sportowcy z ogromną pasją i sercem do sportu. <br>
+                    Zajęcia się odbywają zarówno w halach jak i na stadionie miejskim. <br>
+                    Obozy organizowane sa zarówno w górach jak i nad morzem. <br>
+                    Grupy tworzą i dziewczynki i chlopcy. <br>
+                    Zajęcia organizowane są z lekkiejatletyki jak i z koszykówki. <br>
+                                
+            </p>
+
+
+        </div>
+        <div class="socials">
+            <div class="socialdivs">
+                <div class="fb">
+                    <i class="icon-facebook-official"> </i>
+                </div>
+                <div class="fb1"> <i class="icon-facebook"></i></div>
+                <div class="yt"> <i class="icon-youtube"> <a></i></div>
+                <div class="email"> <i class=" icon-mail"></i></div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+        <div class="footer"> KS Sparta Legnica 2024 </div>
+    </div>
+
+    <script src="jquery-1.11.3.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            var NavY = $('.nav').offset().top;
+
+            var stickyNav = function () {
+                var ScrollY = $(window).scrollTop();
+
+                if (ScrollY > NavY) {
+                    $('.nav').addClass('sticky');
+                } else {
+                    $('.nav').removeClass('sticky');
+                }
+            };
+
+            stickyNav();
+
+            $(window).scroll(function () {
+                stickyNav();
+            });
+        });
+
+        const pobierzCzas = () => {
+            const data = new Date();
+            let godzina = data.getHours();
+            let minuta = data.getMinutes();
+            if (minuta < 10) {
+                minuta = "0" + minuta
+            }
+            let sekunda = data.getSeconds();
+            if (sekunda < 10) {
+                sekunda = "0" + sekunda
+            }
+            zegar.innerHTML = godzina + ":" + minuta + ":" + sekunda;
+        }
+        const zegar = document.getElementById('zegar');
+        const interval = setInterval(pobierzCzas, 1000);
+        const kalendarz = document.getElementById('kalendarz');
+        const data = new Date();
+        let dzien = data.getDate();
+        if (dzien < 10) {
+            dzien = "0" + dzien
+        }
+        let miesiac = data.getMonth() + 1;
+        if (miesiac < 10) {
+            miesiac = "0" + miesiac
+        }
+        let rok = data.getFullYear();
+        kalendarz.innerHTML = dzien + "-" + miesiac + "-" + rok;
+
+
+        pobierzCzas();
+
+
+    </script>
+</body>
+
+</html>
